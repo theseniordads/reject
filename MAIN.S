@@ -1,10 +1,14 @@
 * REJECT DEMO (By Reject) patched music version source by SENIOR DADS
-* 
+
 * Original demo by REJECT in GFA Basic, realeaed early 1998. 
 * Patched version released by the SENIOR DADS on 23rd March 1998.
 *
+* == This is the REMIX VERSION, Released 31st October 2023 ==
+
 * The original demo required to be run in ST Low resolution, and had no music.
-* This version has been patched to run in any resolution, and has music added.
+* The original pacth to the demo allowed to run in any resolution, and had music 
+* added. The remix to the patch makes the music VBL independent, so it will run
+* the same speed on any colour display.
 
 * NOTE: This is not the original source code, as that is almost certainly lost.
 * The source and data has been reverse engineered from the original executable,
@@ -245,25 +249,8 @@ patch:	stack_save	a0/a1
 old_stack:	ds.l    1					; Old stack pointer. Dunno why this is here in the code!
 
 set_screen_music:
-    	moveq	#0,d0                   ; <- Why?!?!?!?!??!! It doesn't do anything!
-    	jsr     music					; Initialise the music
-    	move.l	vbl.w,old_vbl			; We're playing music on the vertical blank interrupt, so we need to save the old one
-    	move.l	#music_vbl,vbl.w
-    	rts
-
-* MUSIC ROUTINE:
-; This just plays the music, and then jumps back to the original VBL routine. (As GFA basic might be using it)
-music_vbl:
-    	movem.l	d0-d7/a0-a6,-(a7)
-    	jsr		music+8
-    	movem.l	(a7)+,d0-d7/a0-a6
-goto_old_vbl
-    	jmp		0.l					; Jump to the original VBL routine
-old_vbl equ goto_old_vbl+2			; <- What do you mean "Yikes!!!"?!?! Have you never seen self-modifying code before?
-
-stop_music:	
-        move.l	old_vbl,vbl.w
-	    jsr		music+4
+		lea 	music,a0
+		jsr 	start_music
     	rts
 
 ; ===================================================================================================
@@ -427,6 +414,8 @@ read_data_file:
     	move.l	d7,d0                           ; <- Should really used d7 for the loop, then we wouldn't need to do this as the value is meant to be passed back in d0!
     	movem.l	saved_registers+4,d1-d7/a0-a6
         rte
+
+		include includes/musplay.s				; VBL independent music player
 
 address_offset:     ds.l    1					; Trap #1 call address offset
 data_file_offset:	ds.l    1					; File seek offset
