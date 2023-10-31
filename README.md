@@ -1,18 +1,17 @@
 # Reject Demo (Patched Version)
-Source code for the patched version of Reject's "Reject Demo"
 
-# Mono-mental
+Full assembler source for the patched version of the "Reject" demo by Reject, released by the Senior Dads on 23rd March 1998.
 
-Full assembler source for the "Mono-mental" demo by The Senior Dads, which was released on the Atari 16 bit platform on the 11th April 1998 at the first ALT Party in Turku, Finland.
+The original version of the demo, as released by Reject in early 1998, required the user to switch the screen resolution to low-res on an ST, and did not include any music. The Senior Dads verdion worked from any colour graphics mode, and added music.
 
-This release is different to other demo source code releases from us in that it's not the original source, (which is lost), but a reverse-engineer of the source code from the original binary. The original binary was disassembled and the source code was re-created from the disassembly. The original graphics and sound were also re-created from the binary. You can find out more about how this was done [here](https://github.com/theseniordads/monomental/blob/main/DOCS/README.md).
+This release is not the original source, (which is lost), but a reverse-engineer of the source code from the original binary. The original binary was disassembled and the source code was re-created from the disassembly. The original graphics and sound were also re-created from the binary. 
 
 ## Specifications
 
-* An Atari ST or later with at least 1 megabytes of memory, TOS 1.04 minumum, a hard drive, and **hi-res mono monitor**.
+* An Atari ST or later with at least 1 megabytes of memory, TOS 1.04 minumum, a hard drive, and colour display.
 * ... Alternatively, a decent emulator like Hatari, configured as above.
-* Devpac 3 to assemble the code.
-* Atomix packer or better to pack the executable.
+* Devpac 3 or VASM/Vlink to assemble the code.
+* [UPX](https://upx.github.io/) packer to pack the executable.
 
 ## How to assemble on an Atari
 
@@ -41,12 +40,15 @@ To turn the compiled binary to an Atari executable:
 * `COMPILED` - Compiled versions of the demo.
   * `ORIGINAL` - Original compiled demo and accompanying [README](https://github.com/theseniordads/reject/blob/main/COMPILED/ORIGINAL/README.TXT).
   * `REMASTER` - Compiled version of the demo from the reverse-engineered source code.
-* `GRAPHICS` 
-  * `REJECT.PI1`- Intro page for the reject demo
 * `DEMOPARTS` - Inidividual parts of the demo, used by `MAIN.S`.
 * `DISASSEMB/REJECT.S` - Disassembly of the original binary using TT-Digger. This is what we started out with!
+* `ETC`
+  * `RASERO.SND` - Music converted into SNDH format.
+  * `SCREENSHOT.PNG` - Screenhot of demo.
+* `GRAPHICS`
+  * `REJECT.PI1`- Intro page for the reject demo
 * `INCLUDES` - Various macro and helpers code.
-* `REJECT.OLD` - Original version of "Reject" demo before patching.
 * `MUSIC` - `.THK` Chip tune music used by the demo.
   * `RASERO.THK` - "Rasero Team F**k Out" music. (With reply code)
   * `RASERO.MUS` - "Rasero Team F**k Out" music.    (Megatizer editor file.)
+* `REJECT.OLD` - Original version of "Reject" demo before patching.
