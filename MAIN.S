@@ -1,13 +1,13 @@
 * REJECT DEMO (By Reject) patched music version source by SENIOR DADS
 
-* Original demo by REJECT in GFA Basic, realeaed early 1998. 
+* Original demo by REJECT in GFA Basic, released early 1998. 
 * Patched version released by the SENIOR DADS on 23rd March 1998.
 *
-* == This is the REMIX VERSION, Released 31st October 2023 ==
+* == This is the REMIX VERSION, Released 2nd November 2023 ==
 
 * The original demo required to be run in ST Low resolution, and had no music.
 * The original pacth to the demo allowed to run in any resolution, and had music 
-* added. The remix to the patch makes the music VBL independent, so it will run
+* added. The remix to the patch makes the music VBL independent, so it will run at
 * the same speed on any colour display.
 
 * NOTE: This is not the original source code, as that is almost certainly lost.
