@@ -1,10 +1,11 @@
 * REJECT DEMO (By Reject) patched music version source by SENIOR DADS
 * 
-* Original demo by REJECT in GFA Basic, realeaed early 1998. 
+* Original demo by REJECT in GFA Basic, released early 1998. 
 * Patched version released by the SENIOR DADS on 23rd March 1998.
 *
 * The original demo required to be run in ST Low resolution, and had no music.
-* This version has been patched to run in any resolution, and has music added.
+* This Senior Dads version has been patched to run in any resolution, and has 
+* music added.
 
 * NOTE: This is not the original source code, as that is almost certainly lost.
 * The source and data has been reverse engineered from the original executable,

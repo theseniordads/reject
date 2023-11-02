@@ -1,6 +1,6 @@
-NOTE: This is the "remastered" 
+NOTE: This is the "remix" 
 version!!! See more here:
-https://github.com/theseniordads/reject/tree/remaster
+https://github.com/theseniordads/reject/tree/remix
 =======================================
 New!!! READ END OF FILE !!!!
 
