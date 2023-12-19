@@ -51,11 +51,11 @@ To turn the compiled binary to an Atari executable:
   * `ORIGINAL` - Original compiled demo and accompanying [README](https://github.com/theseniordads/reject/blob/main/COMPILED/ORIGINAL/README.TXT).
   * `REMASTER` - Compiled version of the demo from the reverse-engineered source code.
   * `REMIX` - Modified version of `REMASTER`, with vbl independent music player.
-* `DEMOPARTS` - Inidividual parts of the demo, used by `MAIN.S`.
 * `DISASSEMB/REJECT.S` - Disassembly of the original binary using TT-Digger. This is what we started out with!
+* `DOCS/README.md` - [How we reverse-engineered the patch](DOCS/README.md).
 * `ETC`
   * `RASERO.SND` - Music converted into SNDH format.
-  * `SCREENSHOT.PNG` - Screenhot of demo.
+  * `SCREENSHOT.PNG` - Screenshot of demo.
 * `GRAPHICS`
   * `REJECT.PI1`- Intro page for the reject demo
 * `INCLUDES` - Various macro and helpers code.
