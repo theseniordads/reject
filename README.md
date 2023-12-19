@@ -2,13 +2,13 @@
 
 Full assembler source for the patched version of the "Reject" demo by Reject, released by the Senior Dads on 23rd March 1998.
 
-The original version of the demo, as released by Reject in early 1998, required the user to switch the screen resolution to low-res on an ST, and did not include any music. The Senior Dads verdion worked from any colour graphics mode, and added music.
+The original version of the demo, as released by Reject in early 1998, required the user to switch the screen resolution to low-res on an ST, and did not include any music. The Senior Dads version worked from any colour graphics mode and added music.
 
 This release is not the original source, (which is lost), but a reverse-engineer of the source code from the original binary. The original binary was disassembled and the source code was re-created from the disassembly. The original graphics and sound were also re-created from the binary.
 
 ## Specifications
 
-* An Atari ST or later with at least 1 megabytes of memory, TOS 1.04 minumum, a hard drive, and colour display.
+* An Atari ST or later with at least 1 megabytes of memory, TOS 1.04 minimum, a hard drive, and a colour display.
 * ... Alternatively, a decent emulator like Hatari, configured as above.
 * Devpac 3 or VASM/Vlink to assemble the code.
 * [UPX](https://upx.github.io/) packer to pack the executable.
