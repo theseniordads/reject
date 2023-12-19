@@ -1,4 +1,4 @@
-# "Reject Demo (Patched Version)" Decompilation notes
+# "Reject Demo (Patched Version)" Recompilation notes
 
 By **THE SENIOR DADS**
 
@@ -16,7 +16,7 @@ The next thing that happens is that we determine where our program is in memory,
 
 The three data files were easy to recover. We already had the original music file to hand, and we could get `REJECT.DAT` and the original demo binary file from the original demo, which we found on [Demozoo](https://demozoo.org/productions/74425/)!
 
-One thing we found early on when we first did the patch was that is that `REJECT.DAT` is actually a Degas Elite PI1 file! If you can run a graphics program that can import PI1 files, you can see it for yourself if you load [`../GRAPHICS/REJECT.PI1`](../GRAPHICS/REJECT.PI1) into it! (Otherwise, you can see it converted into PNG here: [`../ETC/REJECT.PNG`](../ETC/REJECT.PNG))
+One thing we found early on when we first did the patch was that is that `REJECT.DAT` is actually a Degas Elite PI1 file! If you can run a graphics program that can import PI1 files, you can see it for yourself if you load [`GRAPHICS/REJECT.PI1`](../GRAPHICS/REJECT.PI1) into it! (Otherwise, you can see it converted into PNG here: [`ETC/screenshot.png`](..//ETC/screenshot.png)
 
 The next thing we do is save the current resolution, and set the screen to lo-res, which fixed one problem with the demo! We then start up the music, which fixes the other problem! The music has a blank pattern at the start, which how it appears the music starts *after* the intro text has appeared!
 
@@ -42,7 +42,7 @@ So far so good, we just go back 6 bytes on the stack to see the call, right? **N
 
 So, as the issue is that we need know how many bytes back the trap #1 call is, we needed to find a way to determine that. The way we did this is to set up a *test* trap #1 handler, which we used to determine how many bytes back the trap #1 call is, and then save that to an offset variable, which we could then use in our **real** trap #1 handler.
 
-The added complication to this is that the offset only really matters in you're in supervisor mode! If you're not in supervisor mode, you can just go to the address in the user stack pointer (`usp`), and the trap #1 command will be there! So the first thing you have to do in your trap #1 handler is do a bit of faffing around to check if you're running in supervisor mode or not, in order to determine if you need to use the offset or not!
+The added complication to this is that the offset only really matters if you're in supervisor mode! If you're not in supervisor mode, you can just go to the address in the user stack pointer (`usp`), and the trap #1 command will be there! So the first thing you have to do in your trap #1 handler is do a bit of faffing around to check if you're running in supervisor mode or not, in order to determine if you need to use the offset or not!
 
 When we first did the patch, we ran it through `MONST2` to see what trap #1 calls were being used by the demo, and what was relevant to us. We found the following:
 * The demo uses an `fopen ($3d)` trap #1 call to open `REJECT.DAT` for reading.
